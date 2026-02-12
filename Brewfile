@@ -5,8 +5,6 @@ tap "oven-sh/bun"
 brew "composer"
 # Package acting as bridge between Node projects and their package managers
 brew "corepack"
-# Lightweight DNS forwarder and DHCP server
-brew "dnsmasq"
 # Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
 # GitHub command-line tool
