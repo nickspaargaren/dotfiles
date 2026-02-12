@@ -1,8 +1,11 @@
 tap "ddev/ddev"
 tap "hashicorp/tap"
 tap "heroku/brew"
+tap "oven-sh/bun"
 # Dependency Manager for PHP
 brew "composer"
+# Package acting as bridge between Node projects and their package managers
+brew "corepack"
 # Lightweight DNS forwarder and DHCP server
 brew "dnsmasq"
 # Play, record, convert, and stream select audio and video codecs
@@ -37,6 +40,8 @@ brew "yt-dlp"
 brew "ddev/ddev/ddev"
 # Terraform
 brew "hashicorp/tap/terraform"
+# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
+brew "oven-sh/bun/bun"
 # Intercept, modify, replay, save HTTP/S traffic
 cask "mitmproxy"
 # Command-line shell and scripting language
