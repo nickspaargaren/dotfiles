@@ -29,8 +29,6 @@ brew "rustup"
 brew "swiftlint"
 # Validating, recursive, caching DNS resolver
 brew "unbound"
-# Command-line tool for Vapor (Server-side Swift web framework)
-brew "vapor"
 # Generate your Xcode project from a spec file and your folder structure
 brew "xcodegen"
 # Feature-rich command-line audio/video downloader
