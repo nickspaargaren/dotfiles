@@ -1,6 +1,5 @@
 tap "ddev/ddev"
 tap "hashicorp/tap"
-tap "heroku/brew"
 tap "oven-sh/bun"
 # Dependency Manager for PHP
 brew "composer"
