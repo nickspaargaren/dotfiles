@@ -3,8 +3,6 @@ tap "hashicorp/tap"
 tap "oven-sh/bun"
 # Dependency Manager for PHP
 brew "composer"
-# Package acting as bridge between Node projects and their package managers
-brew "corepack"
 # Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
 # GitHub command-line tool
