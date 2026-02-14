@@ -28,3 +28,17 @@
    ```
 
 4. Restart your terminal
+
+## Other commands
+
+Remove all local installed except for included in Brewfile
+
+```bash
+brew bundle cleanup --file=~/.dotfiles/Brewfile
+```
+
+Dump only local installed to Brewfile
+
+```bash
+brew bundle dump --file=~/.dotfiles/Brewfile --force --describe
+```
