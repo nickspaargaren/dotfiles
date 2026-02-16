@@ -41,6 +41,8 @@ cask "mitmproxy"
 cask "powershell"
 # Google Chromium, sans integration with Google
 cask "ungoogled-chromium"
+# Open-source code editor
+cask "visual-studio-code"
 vscode "bradlc.vscode-tailwindcss"
 vscode "danielsanmedium.dscodegpt"
 vscode "dbaeumer.vscode-eslint"
