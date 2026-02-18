@@ -35,6 +35,8 @@ brew "ddev/ddev/ddev"
 brew "hashicorp/tap/terraform"
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 brew "oven-sh/bun/bun"
+# Application uninstaller
+cask "appcleaner"
 # Intercept, modify, replay, save HTTP/S traffic
 cask "mitmproxy"
 # Command-line shell and scripting language
