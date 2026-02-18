@@ -39,6 +39,8 @@ brew "oven-sh/bun/bun"
 cask "appcleaner"
 # Open-source video transcoder
 cask "handbrake-app"
+# Tool to optimise images to a smaller size
+cask "imageoptim"
 # Intercept, modify, replay, save HTTP/S traffic
 cask "mitmproxy"
 # Command-line shell and scripting language
