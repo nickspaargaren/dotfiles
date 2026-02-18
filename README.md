@@ -23,9 +23,19 @@
 
 3. Install Homebrew packages:
 
+   **macOS:**
+
    ```bash
    brew bundle --global
    ```
+
+   **Linux:**
+
+   ```bash
+   brew bundle --global --no-cask
+   ```
+
+   > **Note:** Casks are macOS-only GUI applications and will not install on Linux. The `--no-cask` flag skips these installations.
 
 4. Restart your terminal
 
