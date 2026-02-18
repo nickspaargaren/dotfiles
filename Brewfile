@@ -37,6 +37,8 @@ brew "hashicorp/tap/terraform"
 brew "oven-sh/bun/bun"
 # Application uninstaller
 cask "appcleaner"
+# Open-source video transcoder
+cask "handbrake-app"
 # Intercept, modify, replay, save HTTP/S traffic
 cask "mitmproxy"
 # Command-line shell and scripting language
