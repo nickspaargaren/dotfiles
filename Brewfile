@@ -45,6 +45,8 @@ cask "imageoptim"
 cask "mitmproxy"
 # Command-line shell and scripting language
 cask "powershell"
+# Web browser focusing on security
+cask "tor-browser"
 # Google Chromium, sans integration with Google
 cask "ungoogled-chromium"
 # Open-source code editor
