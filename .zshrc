@@ -10,6 +10,14 @@ plugins=(git yarn docker terraform)
 # Load Oh My Zsh
 source $ZSH/oh-my-zsh.sh
 
+# Node.js Setup
+export PATH="/opt/homebrew/opt/node@24/bin:$PATH"
+
+# Enable Corepack
+if command -v corepack >/dev/null 2>&1; then
+    corepack enable
+fi
+
 # Lazydocker
 if [[ "$(uname -m)" == "arm64" ]]; then
   alias lzd='lazydocker'
