@@ -37,20 +37,24 @@ brew "hashicorp/tap/terraform"
 brew "oven-sh/bun/bun"
 # Application uninstaller
 cask "appcleaner"
+# App to build and share containerised applications and microservices
+cask "docker-desktop"
 # Open-source video transcoder
 cask "handbrake-app"
 # Tool to optimise images to a smaller size
 cask "imageoptim"
 # Intercept, modify, replay, save HTTP/S traffic
 cask "mitmproxy"
-# Command-line shell and scripting language
-cask "powershell"
+# Music streaming service
+cask "spotify"
 # Web browser focusing on security
 cask "tor-browser"
 # Google Chromium, sans integration with Google
 cask "ungoogled-chromium"
 # Open-source code editor
 cask "visual-studio-code"
+# Agentic IDE powered by AI Flow paradigm
+cask "windsurf"
 vscode "bradlc.vscode-tailwindcss"
 vscode "danielsanmedium.dscodegpt"
 vscode "dbaeumer.vscode-eslint"
