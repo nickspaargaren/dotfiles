@@ -1,0 +1,68 @@
+tap "ddev/ddev"
+tap "hashicorp/tap"
+tap "oven-sh/bun"
+# Dependency Manager for PHP
+brew "composer"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
+# GitHub command-line tool
+brew "gh"
+# Command-line benchmarking tool
+brew "hyperfine"
+# Lazier way to manage everything docker
+brew "lazydocker"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node@22"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node@24", link: true
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.12"
+# Rust toolchain installer
+brew "rustup"
+# Tool to enforce Swift style and conventions
+brew "swiftlint"
+# Validating, recursive, caching DNS resolver
+brew "unbound"
+# Generate your Xcode project from a spec file and your folder structure
+brew "xcodegen"
+# Feature-rich command-line audio/video downloader
+brew "yt-dlp"
+# DDEV
+brew "ddev/ddev/ddev"
+# Terraform
+brew "hashicorp/tap/terraform"
+# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
+brew "oven-sh/bun/bun"
+# Application uninstaller
+cask "appcleaner"
+# App to build and share containerised applications and microservices
+cask "docker-desktop"
+# Open-source video transcoder
+cask "imageoptim"
+# Intercept, modify, replay, save HTTP/S traffic
+cask "spotify"
+# Web browser focusing on security
+cask "visual-studio-code"
+# Agentic IDE powered by AI Flow paradigm
+cask "windsurf"
+vscode "bradlc.vscode-tailwindcss"
+vscode "dbaeumer.vscode-eslint"
+vscode "docker.docker"
+vscode "drrouman.git-coauthors"
+vscode "eamodio.gitlens"
+vscode "esbenp.prettier-vscode"
+vscode "github.copilot-chat"
+vscode "google.wireit"
+vscode "hashicorp.terraform"
+vscode "ms-azuretools.vscode-containers"
+vscode "ms-azuretools.vscode-docker"
+vscode "ms-playwright.playwright"
+vscode "robertoachar.vscode-essentials-snippets"
+vscode "rvest.vs-code-prettier-eslint"
+vscode "saoudrizwan.claude-dev"
+vscode "tyriar.sort-lines"
+vscode "vercel.turbo-vsc"
+vscode "vitest.explorer"
+vscode "vue.volar"
