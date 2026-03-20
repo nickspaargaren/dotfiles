@@ -47,6 +47,8 @@ cask "enpass"
 cask "firefox"
 # Tool to optimise images to a smaller size
 cask "imageoptim"
+# Team communication and collaboration software
+cask "slack"
 # Music streaming service
 cask "spotify"
 # Open-source code editor
