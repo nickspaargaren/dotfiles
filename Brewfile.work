@@ -15,6 +15,8 @@ brew "lazydocker"
 brew "node@22"
 # Open-source, cross-platform JavaScript runtime environment
 brew "node@24", link: true
+# Create, run, and share large language models (LLMs)
+brew "ollama", restart_service: :changed
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
 # Interpreted, interactive, object-oriented programming language
