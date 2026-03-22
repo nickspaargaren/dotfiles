@@ -56,7 +56,6 @@ cask "visual-studio-code"
 # Agentic IDE powered by AI Flow paradigm
 cask "windsurf"
 vscode "bradlc.vscode-tailwindcss"
-vscode "danielsanmedium.dscodegpt"
 vscode "dbaeumer.vscode-eslint"
 vscode "docker.docker"
 vscode "drrouman.git-coauthors"
