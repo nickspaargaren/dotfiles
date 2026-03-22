@@ -8,7 +8,7 @@
     l = log --pretty=oneline -n 30 --graph --abbrev-commit
 
     # Pull the latest changes on the origin
-    po = !"git pull origin $(git branch --show-current)"
+    po = !zsh -ic 'ggpull'
 
     # Push commits to the current local branch
     pc = push origin HEAD
