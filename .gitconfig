@@ -58,9 +58,6 @@
     # Push commits to the current local branch
     pc = push origin HEAD
 
-    # Pull the latest changes on the origin
-    po = !"git pull origin $(git branch --show-current)"
-
 [color]
     ui = auto
 
