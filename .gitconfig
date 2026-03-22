@@ -35,6 +35,10 @@
 [core]
     editor = vim
 
+[rerere]
+    enabled = true
+    autoupdate = true
+
 [pager]
     branch = false
     log = false
