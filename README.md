@@ -40,6 +40,16 @@
 
 4. Restart your terminal
 
+## Brewfile.work
+
+The `Brewfile.work` is a separate Homebrew bundle file for work-specific applications and tools.
+
+To install work-specific packages:
+
+```bash
+brew bundle --file=~/.dotfiles/Brewfile.work
+```
+
 ## Other commands
 
 Remove all local installed except for included in Brewfile
