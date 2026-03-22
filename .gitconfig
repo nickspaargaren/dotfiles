@@ -1,0 +1,93 @@
+[user]
+	name = Nick Spaargaren
+	email = nickspaargaren@users.noreply.github.com
+	signingkey = /Users/nick/.ssh/id_ed25519.pub
+
+[alias]
+    # View the SHA, description, and history graph of the latest 30 commits
+    l = log --pretty=oneline -n 30 --graph --abbrev-commit
+
+    # View the current working tree status using the short format
+    s = status -sb
+
+    # Show the diff between the latest commit and the current state
+    d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+
+    # `git di $number` shows the diff between the state `$number` revisions ago and the current state
+    di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+
+    # Clone a repository including all submodules
+    c = clone --recursive
+
+    # Commit all changes
+    ca = !git add -A && git commit -av
+
+    # Switch to a branch, creating it if necessary
+    go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+
+    # Show verbose output about tags, branches or remotes
+    tags = tag -l
+
+    # Create a new tag
+    newtag = tag -a -s
+
+    # Show a list of all local branches
+    b = branch
+
+    # List remotes
+    remotes = remote -v
+
+    # Interactive rebase with the given number of latest commits
+    reb = "!r() { git rebase -i HEAD~$1; }; r"
+
+    # Pull an upstream PR
+    pr = "!pr() { git fetch upstream refs/pull/$1/head:refs/remotes/upstream/pr/$1; git checkout upstream/pr/$1; }; pr"
+
+    # Pull the latest changes on the origin
+    po = !"git pull origin $(git branch --show-current)"
+    
+    # Pull an upstream merge request (GitLab)
+    mr = "!mr() { git fetch upstream refs/merge-requests/$1/head:refs/remotes/upstream/merge-requests/$1; git checkout upstream/merge-requests/$1; }; mr"
+
+    # Remove all local branches merged into your local branch (delete-if-in master)
+    delete-if-in = "!f() { git checkout --quiet \"$1\" && git branch --merged | grep --invert-match '\\*' | xargs -n 1 git branch --delete; git checkout --quiet @{-1}; }; f"
+
+    # List contributors with number of commits
+    contributors = shortlog --summary --numbered
+
+    # Push commits to the current local branch
+    pc = push origin HEAD
+
+    # Pull the latest changes on the origin
+    po = !"git pull origin $(git branch --show-current)"
+
+[color]
+    ui = auto
+
+[color "branch"]
+    current = green
+    local = yellow
+    remote = red
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "status"]
+    added = green
+    changed = yellow
+    untracked = red
+
+[core]
+    editor = vim
+
+[pager]
+    branch = false
+    log = false
+    tag = false
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
