@@ -49,6 +49,8 @@ cask "enpass"
 cask "firefox"
 # Tool to optimise images to a smaller size
 cask "imageoptim"
+# Smooths scrolling and set mouse scroll directions independently
+cask "mos"
 # Team communication and collaboration software
 cask "slack"
 # Music streaming service
