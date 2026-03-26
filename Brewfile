@@ -1,6 +1,8 @@
 tap "ddev/ddev"
 tap "hashicorp/tap"
 tap "oven-sh/bun"
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl"
 # Dependency Manager for PHP
 brew "composer"
 # Play, record, convert, and stream select audio and video codecs
@@ -45,10 +47,10 @@ cask "handbrake-app"
 cask "imageoptim"
 # Intercept, modify, replay, save HTTP/S traffic
 cask "mitmproxy"
-# Music streaming service
-cask "spotify"
 # Instant messaging application focusing on security
 cask "signal"
+# Music streaming service
+cask "spotify"
 # Web browser focusing on security
 cask "tor-browser"
 # Google Chromium, sans integration with Google
