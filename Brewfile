@@ -47,6 +47,8 @@ cask "imageoptim"
 cask "mitmproxy"
 # Music streaming service
 cask "spotify"
+# Instant messaging application focusing on security
+cask "signal"
 # Web browser focusing on security
 cask "tor-browser"
 # Google Chromium, sans integration with Google
