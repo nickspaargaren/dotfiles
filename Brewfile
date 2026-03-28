@@ -59,6 +59,8 @@ cask "transmission"
 cask "ungoogled-chromium"
 # Open-source code editor
 cask "visual-studio-code"
+# Multimedia player
+cask "vlc"
 # Agentic IDE powered by AI Flow paradigm
 cask "windsurf"
 vscode "bradlc.vscode-tailwindcss"
