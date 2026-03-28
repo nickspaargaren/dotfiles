@@ -53,6 +53,8 @@ cask "signal"
 cask "spotify"
 # Web browser focusing on security
 cask "tor-browser"
+# Open-source BitTorrent client
+cask "transmission"
 # Google Chromium, sans integration with Google
 cask "ungoogled-chromium"
 # Open-source code editor
