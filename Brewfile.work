@@ -43,8 +43,6 @@ cask "1password"
 cask "appcleaner"
 # App to build and share containerised applications and microservices
 cask "docker-desktop"
-# Password and credentials manager
-cask "enpass"
 # Web browser
 cask "firefox"
 # Tool to optimise images to a smaller size
