@@ -5,6 +5,8 @@ tap "oven-sh/bun"
 brew "curl"
 # Dependency Manager for PHP
 brew "composer"
+# Reference implementation for the Development Containers specification
+brew "devcontainer"
 # Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
 # GitHub command-line tool
