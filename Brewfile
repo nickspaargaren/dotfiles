@@ -49,6 +49,8 @@ cask "handbrake-app"
 cask "imageoptim"
 # Intercept, modify, replay, save HTTP/S traffic
 cask "mitmproxy"
+# Collaboration platform for API development
+cask "postman"
 # Instant messaging application focusing on security
 cask "signal"
 # Music streaming service
