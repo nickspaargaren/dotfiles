@@ -1,6 +1,7 @@
 tap "ddev/ddev"
 tap "hashicorp/tap"
 tap "oven-sh/bun"
+tap "retlehs/tap"
 # Dependency Manager for PHP
 brew "composer"
 # Play, record, convert, and stream select audio and video codecs
@@ -37,6 +38,8 @@ brew "ddev/ddev/ddev"
 brew "hashicorp/tap/terraform"
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 brew "oven-sh/bun/bun"
+# A better WHOIS lookup tool with interactive TUI
+brew "retlehs/tap/quien"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Application uninstaller
