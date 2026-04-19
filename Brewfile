@@ -41,6 +41,8 @@ brew "hashicorp/tap/terraform"
 brew "oven-sh/bun/bun"
 # Application uninstaller
 cask "appcleaner"
+# Server and cloud storage browser
+cask "cyberduck"
 # App to build and share containerised applications and microservices
 cask "docker-desktop"
 # Open-source video transcoder
