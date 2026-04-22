@@ -40,7 +40,7 @@ brew "ddev/ddev/ddev"
 brew "hashicorp/tap/terraform"
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 brew "oven-sh/bun/bun"
-# A better WHOIS lookup tool with interactive TUI
+# A better whois and domain intelligence toolkit
 brew "retlehs/tap/quien"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
