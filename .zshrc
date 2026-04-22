@@ -10,6 +10,9 @@ plugins=(git yarn docker terraform brew)
 # Load Oh My Zsh
 source $ZSH/oh-my-zsh.sh
 
+# Use Homebrew's git
+export PATH="/opt/homebrew/opt/git/bin:/opt/homebrew/bin:$PATH"
+
 # Node.js Setup
 export PATH="/opt/homebrew/opt/node@24/bin:$PATH"
 
