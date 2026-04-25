@@ -53,6 +53,8 @@ cask "imageoptim"
 cask "mitmproxy"
 # Collaboration platform for API development
 cask "postman"
+# Tool that provides consistent, highly configurable symbols for apps
+cask "sf-symbols"
 # Instant messaging application focusing on security
 cask "signal"
 # Music streaming service
