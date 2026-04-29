@@ -20,6 +20,7 @@
    ln -sf ~/.dotfiles/.zshrc ~/.zshrc
    ln -sf ~/.dotfiles/Brewfile ~/.Brewfile
    ln -sf ~/.dotfiles/.gitconfig ~/.gitconfig
+   ln -sf ~/.dotfiles/opencode ~/.config/opencode
    ```
 
 3. Install Homebrew packages:
