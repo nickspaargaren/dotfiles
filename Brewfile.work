@@ -46,6 +46,8 @@ brew "retlehs/tap/quien"
 cask "1password"
 # Application uninstaller
 cask "appcleaner"
+# Brings the power of Copilot coding agent directly to your terminal
+cask "copilot-cli"
 # App to build and share containerised applications and microservices
 cask "docker-desktop"
 # Web browser
