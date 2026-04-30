@@ -1,3 +1,4 @@
+tap "anomalyco/tap"
 tap "ddev/ddev"
 tap "hashicorp/tap"
 tap "oven-sh/bun"
@@ -33,6 +34,8 @@ brew "unbound"
 brew "xcodegen"
 # Feature-rich command-line audio/video downloader
 brew "yt-dlp"
+# The AI coding agent built for the terminal.
+brew "anomalyco/tap/opencode"
 # DDEV
 brew "ddev/ddev/ddev"
 # Terraform
