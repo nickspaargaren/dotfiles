@@ -1,0 +1,10 @@
+[
+  { // New window
+    "key": "cmd+n",
+    "command": "workbench.action.newWindow"
+  },
+  { // New tab
+    "key": "cmd+t",
+    "command": "workbench.action.files.newUntitledFile"
+  }
+]

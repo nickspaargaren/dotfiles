@@ -1,0 +1,33 @@
+{
+  "window.zoomLevel": 1,
+  "window.openFilesInNewWindow": "off",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "window.newWindowDimensions": "inherit",
+  "editor.renderWhitespace": "trailing",
+  "editor.snippetSuggestions": "top",
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.tabSize": 2,
+  "editor.suggestSelection": "first",
+  "editor.minimap.enabled": false,
+  "diffEditor.renderSideBySide": true,
+  "workbench.editor.untitled.labelFormat": "content",
+  "files.autoSave": "off",
+  "emmet.excludeLanguages": ["markdown"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always",
+    "source.fixAll.eslint": "explicit"
+  },
+  "terminal.integrated.tabs.enabled": false,
+  "explorer.confirmDelete": false,
+  "editor.formatOnSave": true,
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.colorTheme": "Default Dark Modern",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "workbench.experimental.share.enabled": true,
+  "terminal.integrated.showCommandHint": false,
+  "docker.extension.enableComposeLanguageServer": false,
+  "git.confirmSync": false
+}
