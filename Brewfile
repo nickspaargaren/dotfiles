@@ -1,6 +1,7 @@
 tap "anomalyco/tap"
 tap "ddev/ddev"
 tap "hashicorp/tap"
+tap "homebrew/core"
 tap "oven-sh/bun"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
@@ -19,7 +20,7 @@ brew "lazydocker"
 # Open-source, cross-platform JavaScript runtime environment
 brew "node@22"
 # Open-source, cross-platform JavaScript runtime environment
-brew "node@24", link: true
+brew "node@24"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
 # Interpreted, interactive, object-oriented programming language
