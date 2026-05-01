@@ -1,5 +1,12 @@
 # Dotfiles
 
+Personal dotfiles, configuration for shell, editor settings, and macOS applications.
+
+- **Shell** — Zsh configuration and aliases
+- **Editor** — VS Code settings and keybindings
+- **Applications** — Homebrew packages and casks
+- **OpenCode** — AI coding assistant configuration
+
 ## Prerequisites
 
 - [Homebrew](https://brew.sh/)
