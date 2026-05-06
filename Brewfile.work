@@ -55,6 +55,8 @@ cask "copilot-cli"
 cask "docker-desktop"
 # Web browser
 cask "firefox"
+# Set of tools to manage resources and applications hosted on Google Cloud
+cask "gcloud-cli"
 # Tool to optimise images to a smaller size
 cask "imageoptim"
 # Smooths scrolling and set mouse scroll directions independently
