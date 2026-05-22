@@ -69,6 +69,8 @@ cask "telegram"
 cask "tor-browser"
 # Open-source BitTorrent client
 cask "transmission"
+# VPN client for secure internet access and private browsing
+cask "tunnelbear"
 # Google Chromium, sans integration with Google
 cask "ungoogled-chromium"
 # Open-source code editor
