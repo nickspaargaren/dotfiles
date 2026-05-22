@@ -29,8 +29,6 @@ brew "python@3.12"
 brew "rustup"
 # Tool to enforce Swift style and conventions
 brew "swiftlint"
-# Validating, recursive, caching DNS resolver
-brew "unbound"
 # Generate your Xcode project from a spec file and your folder structure
 brew "xcodegen"
 # Feature-rich command-line audio/video downloader
