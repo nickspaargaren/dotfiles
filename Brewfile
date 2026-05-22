@@ -17,6 +17,8 @@ brew "gh"
 brew "hyperfine"
 # Lazier way to manage everything docker
 brew "lazydocker"
+# Mac App Store command-line interface
+brew "mas"
 # Open-source, cross-platform JavaScript runtime environment
 brew "node@22"
 # Open-source, cross-platform JavaScript runtime environment
@@ -79,6 +81,18 @@ cask "visual-studio-code"
 cask "vlc"
 # Agentic IDE powered by AI Flow paradigm
 cask "windsurf"
+mas "Affinity Photo", id: 824183456
+mas "ColorSnapper2", id: 969418666
+mas "Deliveries", id: 290986013
+mas "Flighty", id: 1358823008
+mas "Gemini 2", id: 1090488118
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "Moom Classic", id: 419330170
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "RemoteDrive", id: 6502180430
+mas "Xcode", id: 497799835
 vscode "bradlc.vscode-tailwindcss"
 vscode "dbaeumer.vscode-eslint"
 vscode "docker.docker"
