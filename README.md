@@ -28,6 +28,7 @@ Personal dotfiles, configuration for shell, editor settings, and macOS applicati
    ln -sf ~/.dotfiles/Brewfile ~/.Brewfile
    ln -sf ~/.dotfiles/.gitconfig ~/.gitconfig
    ln -sf ~/.dotfiles/opencode ~/.config/opencode
+   ln -sf ~/.dotfiles/herdr/config.toml ~/.config/herdr/config.toml
 
    # Visual Studio Code IDE (macOS)
    ln -sf ~/.dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
