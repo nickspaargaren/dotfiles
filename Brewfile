@@ -13,6 +13,8 @@ brew "devcontainer"
 brew "ffmpeg"
 # GitHub command-line tool
 brew "gh"
+# Agent multiplexer that lives in your terminal
+brew "herdr"
 # Command-line benchmarking tool
 brew "hyperfine"
 # Lazier way to manage everything docker
