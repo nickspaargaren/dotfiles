@@ -33,6 +33,8 @@ brew "python@3.12"
 brew "rustup"
 # Tool to enforce Swift style and conventions
 brew "swiftlint"
+# Send macOS User Notifications from the command-line
+brew "terminal-notifier"
 # Validating, recursive, caching DNS resolver
 brew "unbound"
 # Generate your Xcode project from a spec file and your folder structure
