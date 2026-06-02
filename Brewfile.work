@@ -27,6 +27,8 @@ brew "ollama", restart_service: :changed
 brew "pipx"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.12"
+# Better WHOIS and domain intelligence toolkit
+brew "quien"
 # Rust toolchain installer
 brew "rustup"
 # Tool to enforce Swift style and conventions
@@ -45,8 +47,6 @@ brew "ddev/ddev/ddev"
 brew "hashicorp/tap/terraform"
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 brew "oven-sh/bun/bun"
-# A better whois and domain intelligence toolkit
-brew "retlehs/tap/quien"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Application uninstaller
