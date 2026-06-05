@@ -29,5 +29,6 @@
   "workbench.experimental.share.enabled": true,
   "terminal.integrated.showCommandHint": false,
   "docker.extension.enableComposeLanguageServer": false,
-  "git.confirmSync": false
+  "git.confirmSync": false,
+  "workbench.browser.openLocalhostLinks": false
 }
