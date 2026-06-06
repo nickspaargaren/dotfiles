@@ -33,10 +33,6 @@ Personal dotfiles, configuration for shell, editor settings, and macOS applicati
    # Visual Studio Code IDE (macOS)
    ln -sf ~/.dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
    ln -sf ~/.dotfiles/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
-
-   # Windsurf IDE (macOS)
-   ln -sf ~/.dotfiles/vscode/settings.json ~/Library/Application\ Support/Windsurf/User/settings.json
-   ln -sf ~/.dotfiles/vscode/keybindings.json ~/Library/Application\ Support/Windsurf/User/keybindings.json
    ```
 
 3. Install Homebrew packages:

@@ -83,8 +83,6 @@ cask "ungoogled-chromium"
 cask "visual-studio-code"
 # Multimedia player
 cask "vlc"
-# Agentic IDE powered by AI Flow paradigm
-cask "windsurf"
 mas "Affinity Photo", id: 824183456
 mas "ColorSnapper2", id: 969418666
 mas "Deliveries", id: 290986013
