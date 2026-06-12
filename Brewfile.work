@@ -1,8 +1,9 @@
 tap "anomalyco/tap"
 tap "ddev/ddev"
 tap "hashicorp/tap"
-tap "oven-sh/bun"
 tap "retlehs/tap"
+# Incredibly fast JavaScript runtime, bundler, test runner, and package manager
+brew "bun"
 # Dependency Manager for PHP
 brew "composer"
 # Play, record, convert, and stream select audio and video codecs
@@ -47,8 +48,6 @@ brew "anomalyco/tap/opencode"
 brew "ddev/ddev/ddev"
 # Terraform
 brew "hashicorp/tap/terraform"
-# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
-brew "oven-sh/bun/bun"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Application uninstaller
