@@ -27,3 +27,5 @@ if [[ "$(uname -m)" == "arm64" ]]; then
 else
   alias lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock lazyteam/lazydocker'
 fi
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
