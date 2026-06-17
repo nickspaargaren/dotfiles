@@ -1,0 +1,32 @@
+{
+  "version": 3,
+  "skills": {
+    "worktrunk": {
+      "source": "max-sixty/worktrunk",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/max-sixty/worktrunk.git",
+      "skillPath": "skills/worktrunk/SKILL.md",
+      "skillFolderHash": "f4308cd885b098a1bb7ab86de4103e374e079847",
+      "installedAt": "2026-06-17T10:02:01.537Z",
+      "updatedAt": "2026-06-17T10:02:01.537Z"
+    }
+  },
+  "dismissed": {
+    "findSkillsPrompt": true
+  },
+  "lastSelectedAgents": [
+    "amp",
+    "antigravity",
+    "antigravity-cli",
+    "cline",
+    "codex",
+    "cursor",
+    "deepagents",
+    "gemini-cli",
+    "github-copilot",
+    "kimi-code-cli",
+    "opencode",
+    "warp",
+    "zed"
+  ]
+}
