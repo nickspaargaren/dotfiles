@@ -2,7 +2,8 @@ tap "anomalyco/tap"
 tap "ddev/ddev"
 tap "hashicorp/tap"
 tap "homebrew/core"
-tap "oven-sh/bun"
+# Incredibly fast JavaScript runtime, bundler, test runner, and package manager
+brew "bun"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
 # Dependency Manager for PHP
@@ -47,8 +48,6 @@ brew "anomalyco/tap/opencode", trusted: true
 brew "ddev/ddev/ddev", trusted: true
 # Terraform
 brew "hashicorp/tap/terraform", trusted: true
-# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
-brew "oven-sh/bun/bun"
 # Application uninstaller
 cask "appcleaner"
 # Server and cloud storage browser
