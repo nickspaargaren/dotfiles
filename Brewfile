@@ -42,11 +42,11 @@ brew "xcodegen"
 # Feature-rich command-line audio/video downloader
 brew "yt-dlp"
 # The AI coding agent built for the terminal.
-brew "anomalyco/tap/opencode"
+brew "anomalyco/tap/opencode", trusted: true
 # DDEV
-brew "ddev/ddev/ddev"
+brew "ddev/ddev/ddev", trusted: true
 # Terraform
-brew "hashicorp/tap/terraform"
+brew "hashicorp/tap/terraform", trusted: true
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 brew "oven-sh/bun/bun"
 # Application uninstaller
