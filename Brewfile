@@ -28,6 +28,8 @@ brew "node@22"
 brew "node@24"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.12"
 # Rust toolchain installer
