@@ -1,6 +1,7 @@
 tap "anomalyco/tap"
 tap "ddev/ddev"
 tap "hashicorp/tap"
+tap "mozilla-ai/tap"
 tap "retlehs/tap"
 # Incredibly fast JavaScript runtime, bundler, test runner, and package manager
 brew "bun"
@@ -58,6 +59,8 @@ cask "1password-cli"
 cask "appcleaner"
 # Brings the power of Copilot coding agent directly to your terminal
 cask "copilot-cli"
+# cq is a shared knowledge store that helps agents avoid known pitfalls.
+cask "mozilla-ai/tap/cq", trusted: true
 # App to build and share containerised applications and microservices
 cask "docker-desktop"
 # Web browser
