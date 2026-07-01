@@ -25,6 +25,7 @@ Personal dotfiles, configuration for shell, editor settings, and macOS applicati
 
    ```bash
    ln -sf ~/.dotfiles/.zshrc ~/.zshrc
+   ln -sf ~/.dotfiles/.vimrc ~/.vimrc
    ln -sf ~/.dotfiles/Brewfile ~/.Brewfile
    ln -sf ~/.dotfiles/.gitconfig ~/.gitconfig
    ln -sf ~/.dotfiles/opencode ~/.config/opencode
