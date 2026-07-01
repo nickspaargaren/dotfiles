@@ -82,5 +82,5 @@ brew bundle dump --file=~/.dotfiles/Brewfile --formula --tap --cask --mas --vsco
 Update AI agent skills
 
 ```
-npx skills update
+skills update
 ```

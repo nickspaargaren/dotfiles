@@ -34,6 +34,8 @@ brew "poppler"
 brew "python@3.12"
 # Rust toolchain installer
 brew "rustup"
+# Open agent skills ecosystem
+brew "skills"
 # Tool to enforce Swift style and conventions
 brew "swiftlint"
 # Send macOS User Notifications from the command-line
