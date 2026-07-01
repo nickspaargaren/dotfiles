@@ -50,6 +50,8 @@ brew "ddev/ddev/ddev", trusted: true
 brew "hashicorp/tap/terraform", trusted: true
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
+# Command-line interface for 1Password
+cask "1password-cli"
 # Application uninstaller
 cask "appcleaner"
 # Brings the power of Copilot coding agent directly to your terminal
