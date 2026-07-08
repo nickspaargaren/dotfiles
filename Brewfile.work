@@ -73,8 +73,6 @@ cask "gcloud-cli"
 cask "imageoptim"
 # Smooths scrolling and set mouse scroll directions independently
 cask "mos"
-# Desktop and web interface for OpenCode AI agent
-cask "openchamber"
 # Team communication and collaboration software
 cask "slack"
 # Music streaming service
