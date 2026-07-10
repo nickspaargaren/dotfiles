@@ -2,6 +2,7 @@ tap "anomalyco/tap"
 tap "ddev/ddev"
 tap "hashicorp/tap"
 tap "homebrew/core"
+tap "mozilla-ai/tap"
 # Incredibly fast JavaScript runtime, bundler, test runner, and package manager
 brew "bun"
 # Get a file from an HTTP, HTTPS or FTP server
@@ -54,6 +55,8 @@ brew "ddev/ddev/ddev", trusted: true
 brew "hashicorp/tap/terraform", trusted: true
 # Application uninstaller
 cask "appcleaner"
+# cq is a shared knowledge store that helps agents avoid known pitfalls.
+cask "mozilla-ai/tap/cq", trusted: true
 # Server and cloud storage browser
 cask "cyberduck"
 # App to build and share containerised applications and microservices
