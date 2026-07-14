@@ -5,3 +5,6 @@ agent_panel_scope = "all"
 
 [ui.toast]
 delivery = "system"
+
+[worktrees]
+directory = "~/.herdr/worktrees"
