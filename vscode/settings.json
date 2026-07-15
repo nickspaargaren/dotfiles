@@ -30,5 +30,9 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "docker.extension.enableComposeLanguageServer": false,
-  "git.confirmSync": false
+  "git.confirmSync": false,
+  "json.schemaDownload.trustedDomains": {
+    "https://opencode.ai": true,
+    "https://models.dev/model-schema.json": true
+  }
 }
