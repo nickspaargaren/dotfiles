@@ -3,6 +3,12 @@ onboarding = false
 [ui]
 agent_panel_scope = "all"
 
+[ui.sidebar.agents]
+row_gap = 1
+
+[ui.sidebar.spaces]
+row_gap = 1
+
 [ui.toast]
 delivery = "system"
 
