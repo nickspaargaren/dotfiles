@@ -3,9 +3,6 @@ onboarding = false
 [update]
 version_check = false
 
-[ui]
-agent_panel_scope = "all"
-
 [ui.sidebar.agents]
 row_gap = 1
 
