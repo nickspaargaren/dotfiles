@@ -1,0 +1,29 @@
+{
+  "global": { "check_for_updates": false },
+  "profiles": [
+    {
+      "complex_modifications": {
+        "rules": [
+          {
+            "description": "Map § key to Ctrl+B",
+            "manipulators": [
+              {
+                "from": { "key_code": "non_us_backslash" },
+                "to": [
+                  {
+                    "key_code": "b",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          }
+        ]
+      },
+      "name": "Nick",
+      "selected": true,
+      "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
+    }
+  ]
+}

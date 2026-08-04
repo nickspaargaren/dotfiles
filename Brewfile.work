@@ -71,6 +71,8 @@ cask "firefox"
 cask "gcloud-cli"
 # Tool to optimise images to a smaller size
 cask "imageoptim"
+# Keyboard customiser
+cask "karabiner-elements"
 # Smooths scrolling and set mouse scroll directions independently
 cask "mos"
 # Team communication and collaboration software

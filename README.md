@@ -32,6 +32,7 @@ Personal dotfiles, configuration for shell, editor settings, and macOS applicati
    ln -sf ~/.dotfiles/.agents/ ~/.agents
    ln -sf ~/.dotfiles/herdr/config.toml ~/.config/herdr/config.toml
    ln -sf ~/.dotfiles/worktrunk/config.toml ~/.config/worktrunk/config.toml
+   ln -sf ~/.dotfiles/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
 
    # Visual Studio Code IDE (macOS)
    ln -sf ~/.dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
