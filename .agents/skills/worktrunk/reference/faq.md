@@ -88,17 +88,15 @@ Three verbosity levels. Each is a superset of the previous one.
 |-------|--------|-------------------------|----------|
 | (none) | Warnings only | — | Normal use |
 | `-v` | + Info: hook output, alias template variable resolution | — | Debugging hooks/aliases |
-| `-vv` | Same as `-v` | + `trace.log`, `subprocess.log`, `diagnostic.md` | Filing a bug |
+| `-vv` | Same as `-v` | + `trace.log`, `trace.jsonl`, `subprocess.log`, `diagnostic.md` | Filing a bug |
 
-At `-vv`, debug-level records (`$ cmd` headers, `[wt-trace]` timing, bounded subprocess preview) route to `trace.log` instead of stderr — so the terminal stays readable while the deep trace lands on disk. A one-line pointer on stderr shows where the files went.
+At `-vv`, debug-level records (command lines, in-process spans, bounded subprocess preview) route to `trace.log` instead of stderr — so the terminal stays readable while the deep trace lands on disk. A one-line pointer on stderr shows where the files went.
 
-The three `-vv` files have distinct audiences:
-
-- **`trace.log`** — bounded preview (~1K lines), `[wt-trace]` records, gistable.
-- **`subprocess.log`** — raw uncapped stdout/stderr of every subprocess `wt` spawns (multi-MB possible, e.g. full `git log -p` output). The deep-dive escape hatch.
-- **`diagnostic.md`** — markdown bug-report bundle that inlines `trace.log`. `wt` prints a `gh gist create` command pointing at it.
+The `-vv` files have distinct audiences: `trace.log` is the human trace (bounded, gistable), `trace.jsonl` the same records for machines, `subprocess.log` the raw uncapped subprocess output, and `diagnostic.md` a bug-report bundle. Each is described in [`wt config state logs`](https://worktrunk.dev/config/#wt-config-state-logs).
 
 `RUST_LOG` overrides the flag baseline when set (`RUST_LOG=debug wt -v` lifts `-v` to debug-on-stderr).
+
+The flags only reach a command you type; shell completion runs as its own process with nowhere to pass one. Set `WORKTRUNK_VERBOSE=0|1|2` to apply the level to *every* invocation, completion included — it's the env-var equivalent of `-v`/`-vv`, so level 2 writes the same `trace.log`/`trace.jsonl`/`subprocess.log`/`diagnostic.md` files. An explicit `-v`/`-vv` on a command raises the level further but never lowers this baseline. To profile a slow tab-completion, run it the way your shell does — e.g. `WORKTRUNK_VERBOSE=2 COMPLETE=fish wt -- wt switch ''` — then render the result with `wt config state logs profile`.
 
 ## What files does Worktrunk create?
 
@@ -132,6 +130,8 @@ Created by `wt config shell install`:
   - `Documents/PowerShell/Microsoft.PowerShell_profile.ps1` (PowerShell 7+)
   - `Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1` (Windows PowerShell 5.1)
 
+Fish and Nushell wrappers live at a path named after the command, so install writes that file whole, replacing an existing `functions/wt.fish`, `completions/wt.fish`, or `wt.nu`. Bash, zsh, and PowerShell rc files hold the rest of a shell's setup, so install only appends a line to those.
+
 **PowerShell detection on Windows:** When running from cmd.exe or PowerShell, both PowerShell profile files are created automatically. When running from Git Bash or MSYS2, PowerShell is skipped (use `wt config shell install powershell` to create the profiles explicitly).
 
 **To remove:** `wt config shell uninstall`.
@@ -143,13 +143,14 @@ Worktrunk stores small amounts of cache and log data in the repository's `.git/`
 | Location | Purpose | Created by |
 |----------|---------|------------|
 | `git config worktrunk.*` | Cached default branch, switch history, branch markers, custom variables | Various commands |
-| `.git/wt/cache/{kind}/*.json` | Cached CI status, the largest PR/MR number seen (sizes the `wt list` CI column), and git command results (merge-tree, integration probes, diff stats, ancestry checks, ahead/behind counts) | `wt list`, `wt merge`, `wt remove` |
+| `.git/wt/cache/{kind}/*.json` | Cached CI status, the largest PR/MR number seen (sizes the `wt list` CI column), and git command results (merge-tree, integration probes, diff stats, ancestry checks, ahead/behind counts, merge bases) | `wt list`, `wt merge`, `wt remove` |
 | `.git/wt/cache/summary/{branch}/{hash}.json` | Cached LLM branch summaries, content-addressed by diff hash | `wt list --full`, `wt switch` (when `[list] summary = true`) |
 | `.git/wt/logs/{branch}/**/*.log` | Background hook output (nested per branch) | Hooks, background `wt remove` |
 | `.git/wt/logs/commands.jsonl` | Command audit log (~2MB max) | Hooks, LLM commands |
-| `.git/wt/logs/trace.log` | Debug log for issue reporting | Running with `-vv` |
+| `.git/wt/logs/trace.log` | Human debug trace for issue reporting | Running with `-vv` |
+| `.git/wt/logs/trace.jsonl` | Machine trace (one JSON object per record) | Running with `-vv` |
 | `.git/wt/logs/subprocess.log` | Raw uncapped subprocess stdout/stderr (may be multi-MB) | Running with `-vv` |
-| `.git/wt/logs/diagnostic.md` | Diagnostic report for issue reporting | Running with `-vv` |
+| `.git/wt/logs/diagnostic.md` | Diagnostic report for issue reporting (leads with the performance profile) | Running with `-vv` |
 | `.git/wt/trash/<name>-<timestamp>` | Staged worktree contents pending background deletion | `wt remove` |
 
 None of this is tracked by git or pushed to remotes.
@@ -171,7 +172,9 @@ Worktrunk can delete **worktrees** and **branches**. Both have safeguards.
 
 `wt remove` mirrors `git worktree remove`: it refuses to remove worktrees with uncommitted changes (staged, modified, or untracked files). The `--force` flag removes the worktree anyway, discarding all of those changes.
 
-For worktrees containing precious ignored data (databases, caches, large assets), use `git worktree lock`:
+Removal also refuses, `--force` included, when the directory at a registered path no longer holds the worktree registered there — a clone made there after the worktree was deleted, say, or another worktree of the same repository moved onto the path. `--force` waives uncommitted changes, not the check for what the directory holds, and `git worktree remove` refuses the same cases.
+
+To protect a worktree from removal entirely (say it holds a local database), lock it:
 
 ```bash
 git worktree lock ../myproject.feature --reason "Contains local database"
@@ -187,13 +190,15 @@ For the full algorithm, see [Branch cleanup](https://worktrunk.dev/remove/#branc
 
 Use `-D` to force-delete branches with unmerged changes. Use `--no-delete-branch` to keep the branch regardless of status.
 
+A branch checked out in a second worktree is retained regardless, `-D` included. Deleting it would leave that worktree unable to resolve `HEAD`; only `git worktree add --force` produces that state.
+
 ### Other cleanup
 
-- `wt remove` — in addition to the target worktree, runs a background internal sweep: deletes `.git/wt/trash/` entries older than 24 hours (eventual cleanup for directories orphaned when a previous background removal was interrupted), and terminates (`SIGTERM` then `SIGKILL`) `git fsmonitor--daemon` processes whose worktree no longer exists
-- `wt remove` — terminates the removed worktree's `git fsmonitor--daemon` process. Git starts this per-worktree filesystem-watch daemon when `core.fsmonitor=true`; once its worktree is gone it would leak. Removal sends `git fsmonitor--daemon stop`, then resolves that daemon's PID from its IPC socket and force-terminates it (SIGTERM, then SIGKILL) if it didn't exit. The signal only ever targets the daemon whose socket resolves to the worktree being removed.
+- `wt merge` / `wt step push` — the target branch's checked-out worktree is updated to the merged commits, so a file those commits delete disappears from it, and an ignored file at a path they track is overwritten — the same result a `git merge` run in that worktree would produce. Uncommitted changes at paths the merge doesn't touch stay in place, staged or not; one at a path it does touch refuses the merge upfront, naming the file
+- `wt remove` — besides the target worktree, two cleanup mechanisms run. The removed worktree's own `git fsmonitor--daemon` (git's per-worktree filesystem watcher under `core.fsmonitor=true`, which would leak once its worktree is gone) is sent `git fsmonitor--daemon stop`, then force-terminated (`SIGTERM`, then `SIGKILL`) via the PID resolved from its IPC socket if it didn't exit. A background sweep then deletes `.git/wt/trash/` entries older than 24 hours (directories orphaned when a previous background removal was interrupted) and terminates fsmonitor daemons whose worktree no longer exists (orphans from `git worktree remove`, `rm -rf`, or a crashed `wt`)
 - `wt config state clear` — removes all worktrunk data from `.git/` (config keys, caches, markers, hints, variables, logs, stale trash)
-- `wt config shell install` — when migrating an integration to a new location, removes the worktrunk-managed file left at the old one: fish `conf.d/wt.fish` (now `functions/wt.fish`) and nushell wrappers stranded under `<config-dir>/vendor/autoload` (now `<data-dir>/vendor/autoload`)
-- `wt config shell uninstall` — removes shell integration from rc files
+- `wt config shell install` — when migrating an integration to a new location, removes the file left at the old one: fish `conf.d/wt.fish` (now `functions/wt.fish`) and nushell wrappers stranded under `<config-dir>/vendor/autoload` (now `<data-dir>/vendor/autoload`). The old path is where worktrunk's own wrapper lived and is named after the command being installed, so it's taken back whole without reading it — a `conf.d/wt.fish` left in place would be sourced at startup and shadow the new wrapper anyway. Only that exact filename is touched, and each removal is printed
+- `wt config shell uninstall` — removes integration lines from bash/zsh/PowerShell rc files, and deletes worktrunk's wrapper and completion files (fish `functions/`, `conf.d/`, and `completions/`; nushell `vendor/autoload`). Uninstall takes no command name, so it lists those directories and recognizes files by worktrunk's own content markers, whatever binary name they were installed under; files without the markers are left alone. An rc file belongs to the user, so a line qualifies only where it runs the init command: one that merely mentions it, inside a comment, an `echo`, or an alias body, stays. Every line uninstall does take is printed, before removal and again after
 
 See [What files does Worktrunk create?](#what-files-does-worktrunk-create) for details.
 
@@ -245,7 +250,7 @@ Yes. Core commands, shell integration, and tab completion work in both Git Bash 
 
 **Git for Windows required** — Hooks use bash syntax and execute via Git Bash, so [Git for Windows](https://gitforwindows.org/) must be installed even when PowerShell is the interactive shell.
 
-**`wt switch` interactive picker unavailable** — Uses [skim](https://github.com/skim-rs/skim), which doesn't support Windows. Use `wt list` and `wt switch <branch>` instead.
+The `wt switch` interactive picker runs on Windows too, on [skim](https://github.com/skim-rs/skim)'s crossterm backend.
 
 ## How does Worktrunk determine the default branch?
 
@@ -283,7 +288,7 @@ cargo test
 
 ### Full integration tests
 
-Shell integration tests require bash, zsh, fish, and nushell:
+Shell integration tests require bash, zsh, fish, nushell, and pwsh, plus `jq`:
 
 ```bash
 cargo test --test integration --features shell-integration-tests
