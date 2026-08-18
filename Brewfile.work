@@ -24,7 +24,7 @@ brew "mas"
 # Open-source, cross-platform JavaScript runtime environment
 brew "node@22"
 # Open-source, cross-platform JavaScript runtime environment
-brew "node@24", link: true
+brew "node@24"
 # Create, run, and share large language models (LLMs)
 brew "ollama", restart_service: :changed
 # Execute binaries from Python packages in isolated environments
