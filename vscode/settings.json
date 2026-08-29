@@ -33,6 +33,7 @@
   "git.confirmSync": false,
   "json.schemaDownload.trustedDomains": {
     "https://opencode.ai": true,
-    "https://models.dev/model-schema.json": true
+    "https://models.dev/model-schema.json": true,
+    "https://openapi.vercel.sh/vercel.json": true
   }
 }
