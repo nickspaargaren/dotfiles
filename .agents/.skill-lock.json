@@ -6,18 +6,18 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/max-sixty/worktrunk.git",
       "skillPath": "skills/worktrunk/SKILL.md",
-      "skillFolderHash": "64f71b070d90ccebd7bfa66142b7a1a0832ca595",
+      "skillFolderHash": "bf0e4c4525c2e2bbaa83329ee87e6d58dacf8f4c",
       "installedAt": "2026-06-17T10:02:01.537Z",
-      "updatedAt": "2026-08-18T08:54:12.004Z"
+      "updatedAt": "2026-09-03T08:25:38.727Z"
     },
     "herdr": {
       "source": "herdrdev/herdr",
       "sourceType": "github",
       "sourceUrl": "https://github.com/herdrdev/herdr.git",
       "skillPath": "skills/herdr/SKILL.md",
-      "skillFolderHash": "4821f1d39ccae24b9b274b03184edaaf198a3994",
+      "skillFolderHash": "f8bb649bb92ddc99e6af463ab9a635da98c7b129",
       "installedAt": "2026-08-18T08:49:41.578Z",
-      "updatedAt": "2026-08-18T08:49:41.578Z"
+      "updatedAt": "2026-09-03T08:25:40.812Z"
     }
   },
   "dismissed": {
