@@ -67,8 +67,6 @@ cask "handbrake-app"
 cask "imageoptim"
 # Intercept, modify, replay, save HTTP/S traffic
 cask "mitmproxy"
-# Collaboration platform for API development
-cask "postman"
 # Tool that provides consistent, highly configurable symbols for apps
 cask "sf-symbols"
 # Instant messaging application focusing on security
