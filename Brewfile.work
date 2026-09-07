@@ -39,6 +39,8 @@ brew "skills"
 brew "swiftlint"
 # Send macOS User Notifications from the command-line
 brew "terminal-notifier"
+# Command-line interface for Vercel
+brew "vercel"
 # CLI for Git worktree management, designed for parallel AI agent workflows
 brew "worktrunk"
 # Generate your Xcode project from a spec file and your folder structure
