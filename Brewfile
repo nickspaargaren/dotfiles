@@ -43,6 +43,8 @@ brew "swiftlint"
 brew "terminal-notifier"
 # Validating, recursive, caching DNS resolver
 brew "unbound"
+# Command-line interface for Vercel
+brew "vercel", link: false
 # CLI for Git worktree management, designed for parallel AI agent workflows
 brew "worktrunk"
 # Generate your Xcode project from a spec file and your folder structure
