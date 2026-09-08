@@ -32,7 +32,7 @@
       "url": "https://mcp.slack.com/mcp"
     }
   },
-  "model": "github-copilot/claude-sonnet-4.6",
+  "model": "github-copilot/claude-sonnet-5",
   "permission": {
     "bash": {
       "*": "allow"
