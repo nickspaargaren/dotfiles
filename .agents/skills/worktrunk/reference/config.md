@@ -474,7 +474,7 @@ Default template:
 ```toml
 [commit.generation]
 squash-template = """
-<task>Write a commit message for the combined effect of these commits.</task>
+<task>Write a commit message for the change in <diff>, which is everything the squash will record. <commits> lists what it folds in.</task>
 
 <format>
 - Subject line under 50 chars
@@ -1236,8 +1236,8 @@ Markers appear at the end of the Status column, after git symbols:
 $ wt list
   Branch       Status      HEAD±     main↕    main…±    Remote⇅  Commit    Age  Message
 @ main             ^⇡                                    ⇡1      33323bc    1d  Initial commit
-+ feature-api      ↑ 🤖              ↑1        +1                70343f0    1d  Add REST API endp…
-+ review-ui      ? ↑ 💬    +1        ↑1        +1                a585d6e    1d  Add dashboard com…
++ feature-api      ↑ 🤖              ↑1        +1                70343f0    1d  Add REST API endpo…
++ review-ui      ? ↑ 💬    +1        ↑1        +1                a585d6e    1d  Add dashboard comp…
 + wip-docs       ? –       +1                                    33323bc    1d  Initial commit
 
 ○ Showing 4 worktrees, 2 with changes, 2 ahead, hidden: Path
@@ -1314,6 +1314,7 @@ $ wt config state vars set env=production --branch=main
 Variables are available in [hook templates](https://worktrunk.dev/hook/#template-variables) as `{{ vars.<key> }}`. Use the `default` filter for keys that may not be set:
 
 ```toml
+# .config/wt.toml
 [post-start]
 dev = "ENV={{ vars.env | default('development') }} npm start -- --port {{ vars.port | default('3000') }}"
 ```
@@ -1324,6 +1325,7 @@ JSON object and array values support dot access:
 $ wt config state vars set config='{"port": 3000, "debug": true}'
 ```
 ```toml
+# .config/wt.toml
 [post-start]
 dev = "npm start -- --port {{ vars.config.port }}"
 ```

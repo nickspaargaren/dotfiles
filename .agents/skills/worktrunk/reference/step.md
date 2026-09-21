@@ -126,6 +126,7 @@ $ wt step commit --stage=tracked
 Configure the default in user config:
 
 ```toml
+# ~/.config/worktrunk/config.toml
 [commit]
 stage = "tracked"
 ```
@@ -188,6 +189,8 @@ See [LLM-generated commit messages](https://worktrunk.dev/llm-commits/) for conf
 
 `pre-commit` hooks run before the squash commit and abort it on failure; `post-commit` hooks run after it, in the background with their output logged. `--no-hooks` skips both. See [`wt hook`](https://worktrunk.dev/hook/).
 
+The squash commit is made on a detached HEAD, as `git rebase` does, so git's own commit hooks run and see no current branch. The branch moves to the squash commit once it exists — a commit that fails leaves the branch and its history untouched.
+
 ### Options
 
 #### Staging
@@ -207,19 +210,20 @@ $ wt step squash --stage=none
 Configure the default in user config:
 
 ```toml
+# ~/.config/worktrunk/config.toml
 [commit]
 stage = "tracked"
 ```
 
 #### Dry run
 
-Render the prompt, print the LLM command, generate the squash message, and exit without resetting, running hooks, or committing:
+Render the prompt, print the LLM command, generate the squash message, and exit without staging, running hooks, or squashing:
 
 ```console
 $ wt step squash --dry-run
 ```
 
-Three sections are printed: the rendered prompt, the shell command that would invoke the LLM, and the message returned. The LLM call still happens — only the squash and commit are skipped.
+Three sections are printed: the rendered prompt, the shell command that would invoke the LLM, and the message returned. The LLM call still happens — only the squash is skipped.
 
 ### Command reference
 
@@ -470,6 +474,7 @@ target/
 After `.worktreeinclude` selects entries, you can add more gitignore-style excludes in user config, per-project user overrides, or project config:
 
 ```toml
+# ~/.config/worktrunk/config.toml
 [step.copy-ignored]
 exclude = [".cache/", ".turbo/"]
 ```
@@ -517,6 +522,7 @@ The `target/` directory is huge (often 1-10GB). Copying with reflink cuts first 
 `node_modules/` is large but mostly static. If the project has no native dependencies, symlinks are even faster:
 
 ```toml
+# .config/wt.toml
 [pre-start]
 deps = "ln -sf {{ primary_worktree_path }}/node_modules ."
 ```
@@ -683,7 +689,7 @@ Variables substitute into each argv element before exec. See [`wt hook` template
 $ wt step for-each -- echo 'Branch: {{ branch }}'
 ```
 
-Each element is expanded fresh in every worktree, so `{{ branch }}` is that worktree's branch. An alias wrapping for-each renders templates earlier, in the invoking worktree; [deferring expansion in an alias](https://worktrunk.dev/extending/#deferring-expansion-to-a-nested-wt-command) shows how to keep a variable per-worktree.
+Each element is expanded fresh in every worktree, so `{{ branch }}` is that worktree's branch. An alias wrapping for-each renders templates earlier, in the invoking worktree; [nesting templates](https://worktrunk.dev/extending/#nesting-templates) shows how to keep a variable per-worktree.
 
 ### Examples
 
