@@ -5,16 +5,16 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
 # Plugins
-plugins=(git yarn docker terraform brew)
+plugins=(git yarn docker terraform brew nvm)
 
-# Load Oh My Zsh
-source $ZSH/oh-my-zsh.sh
+# Auto-switch node version via .nvmrc when changing directories
+zstyle ':omz:plugins:nvm' autoload yes
 
 # Use Homebrew's git
 export PATH="/opt/homebrew/opt/git/bin:/opt/homebrew/bin:$PATH"
 
-# Node.js Setup
-export PATH="/opt/homebrew/opt/node@24/bin:$PATH"
+# Load Oh My Zsh
+source $ZSH/oh-my-zsh.sh
 
 # Enable Corepack
 if command -v corepack >/dev/null 2>&1; then

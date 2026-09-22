@@ -23,10 +23,8 @@ brew "hyperfine"
 brew "lazydocker"
 # Mac App Store command-line interface
 brew "mas"
-# Open-source, cross-platform JavaScript runtime environment
-brew "node@22"
-# Open-source, cross-platform JavaScript runtime environment
-brew "node@24"
+# Node Version Manager
+brew "nvm"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
 # PDF rendering library (based on the xpdf-3.0 code base)
