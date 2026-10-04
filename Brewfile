@@ -23,7 +23,7 @@ brew "hyperfine"
 brew "lazydocker"
 # Mac App Store command-line interface
 brew "mas"
-# Node Version Manager
+# Manage multiple Node.js versions
 brew "nvm"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
