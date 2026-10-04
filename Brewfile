@@ -45,6 +45,8 @@ brew "unbound"
 brew "uv"
 # Command-line interface for Vercel
 brew "vercel"
+# Unified toolchain and entry point for web development
+brew "vite-plus"
 # CLI for Git worktree management, designed for parallel AI agent workflows
 brew "worktrunk"
 # Generate your Xcode project from a spec file and your folder structure
