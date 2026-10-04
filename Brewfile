@@ -44,7 +44,7 @@ brew "unbound"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
 # Command-line interface for Vercel
-brew "vercel", link: false
+brew "vercel"
 # CLI for Git worktree management, designed for parallel AI agent workflows
 brew "worktrunk"
 # Generate your Xcode project from a spec file and your folder structure
