@@ -18,6 +18,15 @@
       "skillFolderHash": "67042ed7910d4177a9000e0679e78b0346060927",
       "installedAt": "2026-08-18T08:49:41.578Z",
       "updatedAt": "2026-10-04T09:19:13.384Z"
+    },
+    "herdr-dog": {
+      "source": "nickspaargaren/herdr-dog",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/nickspaargaren/herdr-dog.git",
+      "skillPath": "skills/herdr-dog/SKILL.md",
+      "skillFolderHash": "30771a4824622fceb9e19bdd72b8111cb560a22c",
+      "installedAt": "2026-10-13T17:38:48.472Z",
+      "updatedAt": "2026-10-13T17:38:48.472Z"
     }
   },
   "dismissed": {
