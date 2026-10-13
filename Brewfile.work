@@ -13,7 +13,7 @@ brew "gh"
 # Distributed revision control system
 brew "git"
 # Agent multiplexer that lives in your terminal
-brew "herdr", restart_service: :changed
+brew "herdr"
 # Command-line benchmarking tool
 brew "hyperfine"
 # Lazier way to manage everything docker
