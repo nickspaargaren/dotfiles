@@ -2,7 +2,6 @@ tap "anomalyco/tap"
 tap "ddev/ddev"
 tap "hashicorp/tap"
 tap "mozilla-ai/tap"
-tap "retlehs/tap"
 # Incredibly fast JavaScript runtime, bundler, test runner, and package manager
 brew "bun"
 # Dependency Manager for PHP
