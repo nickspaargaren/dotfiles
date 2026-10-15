@@ -2,3 +2,6 @@
 .env
 
 !opencode/.gitignore
+
+# OpenCode v2 service credentials
+opencode/service.json

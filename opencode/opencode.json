@@ -1,47 +1,46 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "mcp": {
-    "atlassian": {
-      "type": "remote",
-      "url": "https://mcp.atlassian.com/v2/mcp"
-    },
-    "context7": {
-      "command": ["npx", "-y", "@upstash/context7-mcp"],
-      "type": "local"
-    },
-    "cq": {
-      "command": ["/opt/homebrew/bin/cq", "mcp"],
-      "type": "local"
-    },
-    "playwright": {
-      "command": [
-        "npx",
-        "-y",
-        "@playwright/mcp@latest",
-        "--browser",
-        "firefox"
-      ],
-      "type": "local"
-    },
-    "slack": {
-      "oauth": {
-        "clientId": "{env:SLACK_CLIENT_ID}",
-        "clientSecret": "{env:SLACK_CLIENT_SECRET}"
+    "servers": {
+      "atlassian": {
+        "type": "remote",
+        "url": "https://mcp.atlassian.com/v2/mcp"
       },
-      "type": "remote",
-      "url": "https://mcp.slack.com/mcp"
+      "context7": {
+        "command": ["npx", "-y", "@upstash/context7-mcp"],
+        "type": "local"
+      },
+      "cq": {
+        "command": ["/opt/homebrew/bin/cq", "mcp"],
+        "type": "local"
+      },
+      "playwright": {
+        "command": [
+          "npx",
+          "-y",
+          "@playwright/mcp@latest",
+          "--browser",
+          "firefox"
+        ],
+        "type": "local"
+      },
+      "slack": {
+        "oauth": {
+          "clientId": "{env:SLACK_CLIENT_ID}",
+          "clientSecret": "{env:SLACK_CLIENT_SECRET}"
+        },
+        "type": "remote",
+        "url": "https://mcp.slack.com/mcp"
+      }
     }
   },
   "model": "github-copilot/claude-sonnet-5.5",
-  "permission": {
-    "bash": {
-      "*": "allow"
-    },
-    "external_directory": {
-      "~/Projects/**": "allow"
+  "permissions": [
+    { "action": "shell", "resource": "*", "effect": "allow" },
+    {
+      "action": "external_directory",
+      "resource": "~/Projects/**",
+      "effect": "allow"
     }
-  },
-  "server": {
-    "port": 4096
-  }
+  ]
 }
