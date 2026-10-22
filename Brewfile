@@ -9,6 +9,8 @@ brew "bun"
 brew "curl"
 # Dependency Manager for PHP
 brew "composer"
+# Create and run Linux containers using lightweight virtual machines
+brew "container"
 # Reference implementation for the Development Containers specification
 brew "devcontainer"
 # Play, record, convert, and stream select audio and video codecs
