@@ -67,6 +67,8 @@ cask "mozilla-ai/tap/cq", trusted: true
 cask "cyberduck"
 # App to build and share containerised applications and microservices
 cask "docker-desktop"
+# AI teammates that work across your apps and tools
+cask "grok-bot"
 # Open-source video transcoder
 cask "handbrake-app"
 # Tool to optimise images to a smaller size
