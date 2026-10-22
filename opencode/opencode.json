@@ -34,7 +34,7 @@
       }
     }
   },
-  "model": "github-copilot/claude-sonnet-5.5",
+  "model": "github-copilot/claude-haiku-5.5",
   "permissions": [
     { "action": "shell", "resource": "*", "effect": "allow" },
     {
