@@ -191,6 +191,12 @@ See [LLM-generated commit messages](https://worktrunk.dev/llm-commits/) for conf
 
 The squash commit is made on a detached HEAD, as `git rebase` does, so git's own commit hooks run and see no current branch.
 
+### Recovering staged changes
+
+Before squashing, Worktrunk saves the uncommitted changes the squash includes (everything staged, by hand or by `--stage`) to `refs/wt-backup/<branch>`. Changes left out of the squash stay in the working tree and aren't backed up.
+
+The output prints a command to recover the saved changes in a new worktree, including after `wt merge` removes the original.
+
 ### Options
 
 #### Staging
@@ -663,7 +669,7 @@ Automation:
 
 Run command in each worktree. Executes sequentially with real-time output; continues past command failures.
 
-A summary of successes and failures is shown at the end. Context JSON — a flat object of every template variable — is piped to stdin for scripts that need structured data.
+A summary of successes and failures is shown at the end. Context JSON — a flat object of every template variable — is provided on stdin for scripts that need structured data.
 
 ### Arguments
 
@@ -807,11 +813,11 @@ In `wt list`, candidates show `_` (same commit) or `⊂` (content integrated). R
 
 Locked worktrees, worktrees with uncommitted changes, and the main worktree are always skipped. The current worktree is removed last, triggering cd to the primary worktree. Pre-remove and post-remove hooks run for each removal; a candidate whose hooks include an unapproved project command is skipped with `(approval required)` (pre-approve with `wt config approvals add`, or pass `--yes`).
 
-Removals and their hooks may run concurrently across worktrees. Each worktree's pre-remove hooks finish before its removal begins. Hooks must coordinate writes to shared resources and avoid writing into other worktrees being pruned.
+Prune removes worktrees concurrently, so hooks that write shared resources must coordinate those writes.
 
 ### Min-age guard
 
-Candidates younger than `--min-age` (default: 1 day) are skipped. A worktree's age comes from its creation time. For branches without a reflog, Git maintenance or branch deletion can restart the age guard, even on older branches. This prevents removing a worktree just created from the default branch: it looks "merged" because its branch points at the same commit.
+Candidates younger than `--min-age` (default: 1 day) are skipped, so a worktree just created from the default branch isn't removed for looking "merged" (its branch points at the same commit). A worktree's age is its creation time; a branch with no worktree takes its age from its reflog. A branch with no reflog, which is common in bare repositories, can look new again after Git maintenance or a branch deletion, and is then skipped until `--min-age` passes.
 
 ```console
 $ wt step prune --min-age=0s     # no age guard
