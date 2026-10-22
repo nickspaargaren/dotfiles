@@ -15,6 +15,8 @@ brew "devcontainer"
 brew "ffmpeg"
 # GitHub command-line tool
 brew "gh"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
 # Agent multiplexer that lives in your terminal
 brew "herdr"
 # Command-line benchmarking tool
@@ -111,6 +113,7 @@ vscode "docker.docker"
 vscode "drrouman.git-coauthors"
 vscode "eamodio.gitlens"
 vscode "esbenp.prettier-vscode"
+vscode "golang.go"
 vscode "google.wireit"
 vscode "hashicorp.terraform"
 vscode "l13rary.l13-duplicate"
