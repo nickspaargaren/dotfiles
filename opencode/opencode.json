@@ -6,10 +6,6 @@
         "type": "remote",
         "url": "https://mcp.atlassian.com/v2/mcp"
       },
-      "context7": {
-        "command": ["npx", "-y", "@upstash/context7-mcp"],
-        "type": "local"
-      },
       "cq": {
         "command": ["/opt/homebrew/bin/cq", "mcp"],
         "type": "local"
