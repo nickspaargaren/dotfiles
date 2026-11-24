@@ -12,6 +12,8 @@ brew "ffmpeg"
 brew "gh"
 # Distributed revision control system
 brew "git"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
 # Agent multiplexer that lives in your terminal
 brew "herdr"
 # Command-line benchmarking tool
