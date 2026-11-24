@@ -35,6 +35,7 @@
   "json.schemaDownload.trustedDomains": {
     "https://opencode.ai": true,
     "https://models.dev/model-schema.json": true,
-    "https://openapi.vercel.sh/vercel.json": true
+    "https://openapi.vercel.sh/vercel.json": true,
+    "https://static.modelcontextprotocol.io": true
   }
 }
