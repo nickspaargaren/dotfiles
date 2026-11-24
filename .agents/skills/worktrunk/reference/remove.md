@@ -22,10 +22,18 @@ $ wt remove feature-branch
 $ wt remove old-feature another-branch
 ```
 
+To choose interactively, open the [`wt switch` picker](https://worktrunk.dev/switch/#interactive-picker) and press `Alt-x` on a row.
+
 Keep the branch:
 
 ```console
 $ wt remove --no-delete-branch feature-branch
+```
+
+If `[remove] delete-branch = false` is configured, use `--delete-branch` to delete a branch for one removal:
+
+```console
+$ wt remove --delete-branch feature-branch
 ```
 
 Force-delete an unmerged branch:
@@ -67,6 +75,8 @@ $ wt remove feature --force       # Remove dirty worktree
 $ wt remove feature -D            # Delete unmerged branch
 $ wt remove feature --force -D    # Both
 ```
+
+Before `--force` discards uncommitted changes, Worktrunk saves them (except ignored files and changes inside submodules) to `refs/wt-backup/<branch>` and prints a command to recover them in a new worktree.
 
 Use `--no-delete-branch` to keep the branch regardless of merge status.
 
@@ -135,6 +145,9 @@ Options:
       --no-delete-branch
           Keep branch after removal
 
+      --delete-branch
+          Delete branch after removal (overrides config [remove] delete-branch = false)
+
   -D, --force-delete
           Delete unmerged branches
 
@@ -180,9 +193,7 @@ Global Options:
           Override config with inline TOML, e.g. --config-set list.full=true (repeatable)
 
   -v, --verbose...
-          Verbose output (-v: info logs + hook/alias template variables on stderr; -vv: also debug
-          logs and raw subprocess output written to .git/wt/logs/). Set WORKTRUNK_VERBOSE=0|1|2 to
-          apply the same level everywhere — including shell completion, which no flag can reach
+          Verbose output (-v: template variables; -vv: debug logs)
 
   -y, --yes
           Skip approval prompts

@@ -126,6 +126,14 @@ conda install -c conda-forge worktrunk && wt config shell install
 
 Or with [Pixi](https://pixi.sh): `pixi global install worktrunk && wt config shell install`.
 
+**PyPI** (experimental):
+
+```bash
+uv tool install worktrunk@latest && wt config shell install
+```
+
+Python tools can also list `worktrunk` as a dependency, or run it without installing: `uvx --from worktrunk wt list`.
+
 </details>
 
 ## Quick start
@@ -141,7 +149,7 @@ This creates a new branch and worktree, then switches to it. Do your work, then 
 
 ```console
 $ wt list
-  Branch        Status      HEAD±     main↕    main…±    Remote⇅  Commit    Age  Message
+  Branch        Status       @±        ^↕        ^…±     Remote⇅  Commit    Age  Message
 @ feature-auth  +   ↑      +27   -8   ↑1       +31                4bc72dc    2h  Add authenticatio…
 ^ main              ^⇡                                    ⇡1      0e631ad    1d  Initial commit
 

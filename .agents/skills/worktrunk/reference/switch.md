@@ -19,6 +19,8 @@ $ wt switch https://github.com/owner/repo/pull/123   # ...or paste the PR's URL
 
 The `--create` flag creates a new branch from `--base` — the default branch unless specified. Without `--create`, the branch must already exist. Switching to a remote branch (e.g., `wt switch feature` when only `origin/feature` exists) creates a local tracking branch.
 
+To complete branches from a specific remote, type its prefix before pressing Tab (e.g., `wt switch origin/`).
+
 A new branch tracks the remote branch it starts from only when the two share a name: `--create release --base origin/release` tracks `origin/release`, while `--create feature --base origin/release` gets no upstream. Publish such a branch with `git push --set-upstream origin <branch>`, or set git's `push.autoSetupRemote = true` once.
 
 ## Creating worktrees
@@ -140,7 +142,7 @@ $ wt switch --prs                                   # Browse open PRs/MRs in the
 
 Both work anywhere a branch is accepted, including `--base`. The `--create` flag cannot be used with a PR/MR reference since the branch already exists.
 
-If the PR or MR is on a fork, the local branch uses its branch name directly, so `git push` works normally. A pre-existing local branch with that name tracking something else requires renaming first.
+If the PR or MR is on a fork, the local branch uses its branch name directly, so `git push` works normally. If a local branch with that name already exists for a different ref, Worktrunk uses a prefixed branch instead. The prefixed branch can fetch the PR or MR but cannot push to the fork.
 
 The `--prs` flag adds the repository's open PRs (GitHub) or MRs (GitLab) that aren't already in the interactive picker. Selecting one switches to it as `pr:<number>` / `mr:<number>` would.
 
@@ -260,11 +262,11 @@ Automation:
           Output format
 
           JSON prints one structured result to stdout once the switch, including any --execute
-          command, completes. Once arguments are accepted, failures print an object with an error
-          string. Argument errors use stderr only. Diagnostics and --execute output go to stderr. A
-          worktree created before a later failure remains in place. Canceling the interactive picker
-          produces no result. Background hooks run independently of the result. Designed for tool
-          integration (e.g., Claude Code WorktreeCreate hooks).
+          command, completes. A worktree created before a later failure remains in place and is
+          included in the result. Read stdout even when the exit status is nonzero. Errors,
+          diagnostics, and --execute output go to stderr. Failure before a result exists and
+          canceling the interactive picker produce no result. Background hooks run independently of
+          the result. Designed for tool integration (e.g., Claude Code WorktreeCreate hooks).
 
           [default: text]
           [possible values: text, json]
@@ -280,9 +282,7 @@ Global Options:
           Override config with inline TOML, e.g. --config-set list.full=true (repeatable)
 
   -v, --verbose...
-          Verbose output (-v: info logs + hook/alias template variables on stderr; -vv: also debug
-          logs and raw subprocess output written to .git/wt/logs/). Set WORKTRUNK_VERBOSE=0|1|2 to
-          apply the same level everywhere — including shell completion, which no flag can reach
+          Verbose output (-v: template variables; -vv: debug logs)
 
   -y, --yes
           Skip approval prompts
