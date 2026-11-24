@@ -27,6 +27,8 @@ brew "mas"
 brew "nvm"
 # AI coding agent, built for the terminal
 brew "opencode"
+# Spec-driven development (SDD) for AI coding assistants
+brew "openspec"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
 # PDF rendering library (based on the xpdf-3.0 code base)
