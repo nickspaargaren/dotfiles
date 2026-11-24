@@ -15,9 +15,10 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/herdrdev/herdr.git",
       "skillPath": "skills/herdr/SKILL.md",
-      "skillFolderHash": "67042ed7910d4177a9000e0679e78b0346060927",
+      "skillFolderHash": "2be0d86d481d1bb29c62e11ef37b78d27d01b478",
       "installedAt": "2026-08-18T08:49:41.578Z",
-      "updatedAt": "2026-10-04T09:19:13.384Z"
+      "updatedAt": "2026-11-24T09:50:12.973Z",
+      "commit": "e8d7d9705a7a2c89cef4dd42079379f05685af87"
     },
     "herdr-dog": {
       "source": "nickspaargaren/herdr-dog",
