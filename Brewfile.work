@@ -18,6 +18,8 @@ brew "go"
 brew "herdr"
 # Command-line benchmarking tool
 brew "hyperfine"
+# Build and deploy Go applications on Kubernetes
+brew "ko"
 # Lazier way to manage everything docker
 brew "lazydocker"
 # Mac App Store command-line interface
