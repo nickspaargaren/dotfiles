@@ -49,8 +49,6 @@ brew "swiftlint"
 brew "terminal-notifier"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
-# Command-line interface for Vercel
-cask "vercel"
 # Unified toolchain and entry point for web development
 brew "vite-plus"
 # CLI for Git worktree management, designed for parallel AI agent workflows
@@ -97,6 +95,8 @@ cask "slack"
 cask "spotify"
 # Free and open-source OpenVPN client
 cask "tunnelblick"
+# Command-line interface for Vercel
+cask "vercel"
 # Open-source code editor
 cask "visual-studio-code"
 mas "Deliveries", id: 290986013
